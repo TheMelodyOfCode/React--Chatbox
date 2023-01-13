@@ -12,6 +12,7 @@ function ErrorFallback({error, resetErrorBoundary,}) {
   )
 }
 
+
 function App() {
   return (
       <main className="container">

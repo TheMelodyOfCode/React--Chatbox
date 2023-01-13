@@ -3,7 +3,9 @@ import * as React from 'react'
 import MessagesDisplay from '../messagesDisplay/messagesDisplay.component'
 import allMessages from '../../utils/allMessages'
 
+
 const Chatbox =()=>{
+
 
     const messageDisplayRef = React.useRef()
     const [messages, setMessages] = React.useState(allMessages.slice(0, 8))
@@ -37,7 +39,6 @@ const Chatbox =()=>{
         </section>
     )
   }
-
 
 
 export default Chatbox;
