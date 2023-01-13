@@ -1,0 +1,89 @@
+.chatbox {
+
+    display: grid;
+    grid-column: 2 / 6;
+    grid-row: 3 / 4;
+    grid-template-columns:  minmax(max-content, 1fr);
+    grid-template-rows: repeat(4, minmax(min-content, max-content));
+    justify-content: center;
+    row-gap: 2rem;
+
+    
+
+    @include respond(phone) {  
+        justify-self: center;
+        font-size: 1.3rem; 
+        width: 28rem;    
+    }
+
+    &__btnBox {
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        column-gap: 1.5rem;
+
+        &__addBtn {
+            grid-column: 1 / 2;
+            width: 50%;
+            justify-self: end;
+            @include respond(phone) { 
+                height: 2rem; 
+                width: 100%
+            }
+        }
+        &__removeBtn {
+            grid-column: 2 / 3;
+            width: 50%;
+            @include respond(phone) { 
+                height: 2rem; 
+                width: 100%
+            }
+        }
+    }
+
+    &__scrollToTopBox {
+        grid-row: 2/3;
+        &-btn{
+            background-color: $color-primary-1;
+        }
+    }
+
+    &__box {
+        grid-row: 3/4;
+        font-size: 1.5rem;
+        height: 35rem;
+        overflow-y: scroll;
+
+        color: $color-black;
+        background-color: $color-gray-1;
+        @include respond(tab-port) {  
+            font-size: $default-font-size;
+            width: 52rem;    
+        }
+        @include respond(phone) {  
+            justify-self: center;
+            width: 35rem;    
+        }
+
+        &__messages {
+            display: grid;
+            grid-template-rows:  min-content;
+            &--author{
+                grid-row: 1/2;
+            }
+            &--content{
+                grid-row: 2/3;
+          }
+        }
+    }
+    &__scrollToBottomBox {
+        grid-row: 4/5;
+            &-btn{
+                background-color: $color-primary-1;
+            }
+    }
+    
+ 
+}
+
+  

@@ -1,0 +1,37 @@
+/* Browser reset 
+important to not forget the pseudo elements !!*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /* by setting the box-sizing to inherit we can now
+    change the  BODY box-sizing poperty when ever we want and it will apply to all elements */
+    box-sizing: inherit;
+}
+
+html {
+
+/* root font-size set for rem. It defines what 1rem is.
+It's important to set a % value here since the user can change the font-settings in the browser
+100% is equal to 16px . - 16px is the default browser font-size
+1rem = 16px*/
+    font-size: 62.5%; /*  10px / 16px * 100  (16px = 1rem)  */  
+}
+
+body {
+    background-image: radial-gradient($color-tertiary-dark-2, $color-primary-bg);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: [full-start] minmax(4rem, 1fr) [center-start]repeat(4, [col-start] minmax(min-content, 14rem)[col-end]) [center-end] minmax(4rem, 1fr) [full-end];
+    grid-template-rows:  minmax(1rem, min-content)  repeat(2, minmax(max-content, max-content)) minmax(4rem, min-content);
+}
+
+
+/* to set color to text-select on page */
+::selection {
+    background-color: $color-textSelect-1;
+    color: $color-black;
+}
