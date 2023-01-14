@@ -50,25 +50,25 @@ export const getSingleDocfromDB = async ( cardName) =>{
 
 }
 
-
 // ### GET all FILES from DB !! ###
 // #############################
 
-export const getCardItemsfromDB = async ()=>{
-  const collectionRef = collection(db, 'messages');
+export const getAllItemsfromDB = async ()=>{
+  const collectionRef = collection(db, 'chatbox');
   const q = query(collectionRef);
-  
   const querySnapshot = await getDocs(q);
-  
-  const cardItemsMap = querySnapshot.docs.reduce((acc, docSnapshot) =>{
-    const  items = docSnapshot.data();
-    // console.log(items)
-    return items;
-  }, {});
+  if (querySnapshot) {
+    const itemsMap = querySnapshot.docs.reduce((acc, docSnapshot) =>{
+      const  items = docSnapshot.data();
+      return items;
+    }, {});
+    return itemsMap;
+  } else {
+    const error = {error: 'error', status: 'rejected', message: `Hoppala; , - Nothing found` }
+    return Promise.reject(error)
+  }
 
-  return cardItemsMap;
 }
-
 
 // ### UPLOAD FILES TO DB !! ###
 // #############################

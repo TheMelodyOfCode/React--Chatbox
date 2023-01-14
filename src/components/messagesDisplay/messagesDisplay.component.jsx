@@ -3,6 +3,8 @@ import * as React from 'react'
 
 // because this is wrapped in a React.forwardRef, it accepts `ref` as the second argument
 const MessagesDisplay = React.forwardRef( function MessagesDisplay({messages}, ref) {
+  
+  // console.log(allFromDB.items)
   const containerRef = React.useRef()
   React.useLayoutEffect(() => {
     scrollToBottom()
