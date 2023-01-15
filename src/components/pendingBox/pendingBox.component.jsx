@@ -4,11 +4,11 @@
 export const PendingBox =()=>{
 return (
     <>
-    <img className="pendingBox__container__img" src='img/loading.jpg'  alt='fallback' /> 
-    <h5 className="pendingBox__container__title">loading ...</h5>
-    <p className="pendingBox__container__text">
-        loading ...
-    </p>
+        <section className="pendingBox">
+            <div className="pendingBox__container">
+                <img className="pendingBox__container__img" src='img/loading.jpg'  alt='fallback' /> 
+            </div>
+        </section>
     </>
     )
 

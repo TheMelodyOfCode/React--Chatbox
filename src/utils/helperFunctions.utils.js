@@ -57,7 +57,6 @@ export const useAsync = (initialState) => {
         ...initialState,
     })
     
-    
     const dispatch = useSafeDispatch(unsafeDispatch)
     
     /** run function responsible for memoizing */

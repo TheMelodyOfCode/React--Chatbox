@@ -27,14 +27,12 @@ function ErrorFallback({error, resetErrorBoundary,}) {
 function App() {
 
   const {data: allFromDB, status, error, run} = useAsync({ 
-    status: 'pending' ,
+    status: 'idle' ,
   })
 
     React.useEffect(()=>{
-
       const getCardItem = async ()=> {
         const allFromDB = await getAllItemsfromDB()
-        console.log(allFromDB)
         return allFromDB.items.map((m, i) => ({id: i, author: m.split(': ')[0], content: m.split(': ')[1]}))
     };
     run(getCardItem())
@@ -48,24 +46,20 @@ function App() {
       return (
       <main className="container">
           <Header />
-          <section className="pendingBox">
-            <div className="pendingBox__container">
-                <PendingBox />
-            </div>
-          </section>
+          <PendingBox />
       </main>
       ) 
-    case 'rejected':
-      throw error
     case 'resolved':
   return (
       <main className="container">
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Header />
-          <Chatbox allFromDB={allFromDB} />
+            <Chatbox allFromDB={allFromDB} status={status}/>
         </ErrorBoundary>
       </main>
-  );
+  )
+  case 'rejected':
+    throw error
   default:
     throw new Error('This should be impossible')
 }

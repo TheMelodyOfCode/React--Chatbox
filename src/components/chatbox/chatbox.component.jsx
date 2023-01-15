@@ -1,30 +1,26 @@
 import * as React from 'react'
 
 import MessagesDisplay from '../messagesDisplay/messagesDisplay.component'
-// import allMessages from '../../utils/allMessages'
-
 
 const Chatbox =({allFromDB})=>{
 
-    console.log(allFromDB)
-    const allMessages = allFromDB;
     const messageDisplayRef = React.useRef()
-    const [messages, setMessages] = React.useState(allMessages.slice(0, 8))
+    const [messages, setMessages] = React.useState(allFromDB.slice(0, 8))
+
 
     const addMessage = () =>
-      messages.length < allMessages.length
-        ? setMessages(allMessages.slice(0, messages.length + 1))
+      messages.length < allFromDB.length
+        ? setMessages(allFromDB.slice(0, messages.length + 1))
         : null
     const removeMessage = () =>
       messages.length > 0
-        ? setMessages(allMessages.slice(0, messages.length - 1))
+        ? setMessages(allFromDB.slice(0, messages.length - 1))
         : null
   
     const scrollToTop = () => messageDisplayRef.current.scrollToTop()
     const scrollToBottom = () => messageDisplayRef.current.scrollToBottom()
     
   
-
     return (
         <section className="chatbox">
             

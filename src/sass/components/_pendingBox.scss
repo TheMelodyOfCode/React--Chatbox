@@ -1,25 +1,16 @@
 .pendingBox {
 
     display: grid;
-    grid-column: 4 /5;
+    grid-column: 3 / 4;
     grid-row: 3 / 4;
-    // grid-template-columns:  minmax(max-content, max-content);
-    // grid-template-rows: min-content;
-    // justify-content: center;
+    justify-content: center;
     row-gap: 2rem;
 
     &__container {
-        grid-column: 1/2;
-        grid-row: 1/2
+        height: 35rem;
 
-        &__title {
-            font-size: 2.5rem;
-            text-align: center;
-            color: $color-white;
-        }
-    
         &__img {
-            width: 40%;
+            width: 300%;
             z-index: 1;  
             &:hover {
                 transform: scale(1.1);
@@ -27,10 +18,5 @@
                 } 
         }
    
-        &__text {
-            font-size: 1.8rem;
-            color: $color-white;
-        }
-
     }
 }
