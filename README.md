@@ -4,12 +4,26 @@
 > the exercise in this project was about:  
 > auto-growing chatbox  
 > useLayoutEffect vs. useEffect  
-> useImperativeHandle  
+> useImperativeHandle 
+
+##### General functionality:  
+>> recieve messages from firebase   
+>> add or remove messages from an auto-growing chatbox   
+>> scroll top to bottom buttons  
+
+> Hooks used in this exercise:  
+>> useState</br>
+>> useEffect</br>
+>> useRef</br>
+>> useReducer</br>
+>> useLayoutEffect</br>
+>> useCallback</br>
+>> useImperativeHandle</br>
 
 ##### useLayoutEffect
 > If your effect is mutating the DOM (via a DOM node ref) and the DOM mutation will change  
  the appearance of the DOM node between the time that it is rendered and your effect mutates it,  
-then you don't want to use useEffect. You'll want to use useLayoutEffect.  
+ in this case you don't want to use useEffect. You'll want to use useLayoutEffect.  
 > - https://kentcdodds.com/blog/useeffect-vs-uselayouteffect  
 
 ##### RULE: useLayoutEffect vs. useEffect
@@ -17,6 +31,11 @@ then you don't want to use useEffect. You'll want to use useLayoutEffect.
 
 ##### useImperativeHandle
 > imperative methods scrollToTop and scrollToBottom on a ref so the parent component can call those directly.  
+
+#### Firebase
+> In the Utils Folder, you will find all files related to Firebase</br>
+>> There is a firebase.upload_data.js file for Firestore db in case you want to create your own.</br>
+>> The current configuration in the firebase.utils file works though.</br>
 
 #### Credit
 >  - Credit goes to **Kent C. Dodds** </br>
